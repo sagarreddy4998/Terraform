@@ -1,0 +1,13 @@
+provider "aws" {
+  region ="ap-southeast-2"
+}
+
+resource "aws_instance" "dockerr" {
+  ami="ami-0a83be6023b1c0b66"
+  instance_type = "t2.micro"
+  key_name = "Keypair"
+  vpc_security_group_ids = ["sg-07b8adc6d24951a99"]
+  tags = {
+    name="Docker_basics"
+  }
+}
